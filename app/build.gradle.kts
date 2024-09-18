@@ -1,3 +1,5 @@
+import org.apache.tools.ant.util.JavaEnvUtils.VERSION_1_8
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -38,6 +40,7 @@ android {
         viewBinding = true
         dataBinding = true
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
@@ -60,6 +63,9 @@ dependencies {
     implementation("com.google.code.gson:gson:2.8.9")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("com.squareup.okhttp3:okhttp-urlconnection:4.9.1")
+
+    // Fragment
+    implementation("androidx.fragment:fragment:1.8.3")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
