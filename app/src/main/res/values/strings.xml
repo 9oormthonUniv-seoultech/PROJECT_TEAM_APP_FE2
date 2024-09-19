@@ -6,5 +6,5 @@
     <string name="textview_register"><u>회원가입 하기</u></string>
     <string name="textview_question"><u>문의하기</u></string>
     <string name="toolbar_register"><u>회원가입</u></string>
-    <string name="button_id_check"><u>확인</u></string>
+    <string name="button_id_check">확인</string>
 </resources>
