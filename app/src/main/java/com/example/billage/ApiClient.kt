@@ -28,13 +28,13 @@ class ApiClient(val context: Context){
         .build()
 
     val retrofit = Retrofit.Builder()
-        .baseUrl(BuildConfig.server_url)
+        // .baseUrl(BuildConfig.server_url)
         // SSL 우회
         .client(getUnsafeOkHttpClient().build())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val apiService = retrofit.create(ApiService::class.java)
+    //val apiService = retrofit.create(ApiService::class.java)
 
     /*
     *  Retrofit SSL 우회 접속 통신

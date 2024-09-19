@@ -5,6 +5,9 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.gms.google-services")
 }
+configurations.implementation{
+    exclude(group = "com.intellij", module = "annotations")
+}
 
 android {
     namespace = "com.example.billage"
@@ -39,6 +42,7 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true
     }
     buildToolsVersion = "34.0.0"
 }
@@ -66,6 +70,7 @@ dependencies {
 
     // Fragment
     implementation("androidx.fragment:fragment:1.8.3")
+    implementation("androidx.fragment:fragment-ktx:1.8.3")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -73,6 +78,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.compiler)
+    implementation(libs.androidx.work.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

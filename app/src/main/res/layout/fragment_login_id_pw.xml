@@ -10,11 +10,160 @@
         android:id="@+id/toolbarLogin"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#d9d9d9""/>
+        android:background="#d9d9d9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
+        android:id="@+id/textViewName"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="이름"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextName"
+        android:layout_marginHorizontal="30dp"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_login"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewMakeId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="아이디(웹메일)"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/linearLayoutMakeId"
+        android:layout_marginHorizontal="30dp"/>
+
+    <FrameLayout
+        android:id="@+id/linearLayoutMakeId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <EditText
+            android:id="@+id/editTextMakeId"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/edittext_login"
+            />
+        <Button
+            android:id="@+id/buttonIdCheck"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_gravity="end|center"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:text="@string/button_id_check"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewMakePw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호"
+        app:layout_constraintStart_toStartOf="@id/editTextMakePw"
+        app:layout_constraintBottom_toTopOf="@id/editTextMakePw"/>
+
+    <TextView
+        android:id="@+id/textViewPwCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(4~16 자리, 특수문자(@, !, ~, #, *, ‘ 중 1개 이상)포함, 영문)"
+        app:layout_constraintStart_toEndOf="@id/textViewMakePw"
+        app:layout_constraintBottom_toTopOf="@id/editTextMakePw"
+        android:textSize="12sp"
+        android:textColor="#777575"/>
+
+    <EditText
+        android:id="@+id/editTextMakePw"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_login"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutMakeId"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewCheckPw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 확인"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/editTextCheckPw"
+        android:layout_marginHorizontal="30dp"/>
+
+    <EditText
+        android:id="@+id/editTextCheckPw"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_login"
+        app:layout_constraintTop_toBottomOf="@id/editTextMakePw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        app:layout_constraintStart_toStartOf="@id/editTextPhone"
+        app:layout_constraintBottom_toTopOf="@id/editTextPhone"/>
+
+    <TextView
+        android:id="@+id/textViewPhoneForm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="( ex) 010 - xxxx - xxxx)"
+        app:layout_constraintStart_toEndOf="@id/textViewPhone"
+        app:layout_constraintBottom_toTopOf="@id/editTextPhone"
+        android:textSize="12sp"
+        android:textColor="#777575"
+        android:layout_marginHorizontal="5dp"/>
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/edittext_login"
+        app:layout_constraintTop_toBottomOf="@id/editTextCheckPw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/buttonLoginNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음으로"
+        android:backgroundTint="#D9D9D9"
+        android:textColor="#35363E"
+        android:textSize="24sp"
+        android:layout_margin="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

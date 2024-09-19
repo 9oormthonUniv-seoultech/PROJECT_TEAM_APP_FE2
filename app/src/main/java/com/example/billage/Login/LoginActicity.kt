@@ -5,17 +5,30 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.commit
+import androidx.fragment.app.add
 import com.example.billage.R
+import com.example.billage.databinding.ActivityLoginActicityBinding
 
 class LoginActicity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginActicityBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_login_acticity)
+        binding = ActivityLoginActicityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+
+        if(savedInstanceState == null){
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<LoginHomeFragment>(R.id.frameLayoutLogin)
+            }
         }
     }
 }

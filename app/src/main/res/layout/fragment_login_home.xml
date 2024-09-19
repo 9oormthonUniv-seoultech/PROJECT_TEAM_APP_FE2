@@ -27,7 +27,7 @@
         android:text="아이디(웹메일)"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/EditTextLoginId"
+        app:layout_constraintBottom_toTopOf="@id/editTextLoginId"
         android:layout_marginHorizontal="30dp"/>
 
     <EditText
@@ -36,7 +36,7 @@
         android:layout_height="40dp"
         android:background="@drawable/edittext_login"
         android:layout_marginTop="45dp"
-        app:layout_constraintTop_toBottomOf="@id/ImageViewHomeLogo"
+        app:layout_constraintTop_toBottomOf="@id/imageViewHomeLogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"/>
@@ -48,7 +48,7 @@
         android:text="비밀번호"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/EditTextLoginPw"
+        app:layout_constraintBottom_toTopOf="@id/editTextLoginPw"
         android:layout_marginHorizontal="30dp"/>
 
     <EditText
@@ -56,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/edittext_login"
-        app:layout_constraintTop_toBottomOf="@id/EditTextLoginId"
+        app:layout_constraintTop_toBottomOf="@id/editTextLoginId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="30dp"/>
@@ -70,15 +70,15 @@
         android:textColor="#35363E"
         android:fontFamily="@font/pretendard_font"
         android:layout_marginTop="26dp"
-        app:layout_constraintTop_toBottomOf="@id/EditTextLoginPw"
-        app:layout_constraintEnd_toEndOf="@id/EditTextLoginPw"/>
+        app:layout_constraintTop_toBottomOf="@id/editTextLoginPw"
+        app:layout_constraintEnd_toEndOf="@id/editTextLoginPw"/>
 
     <LinearLayout
         android:id="@+id/linearLayoutForId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/ButtonLogin"
+        app:layout_constraintTop_toBottomOf="@id/buttonLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
