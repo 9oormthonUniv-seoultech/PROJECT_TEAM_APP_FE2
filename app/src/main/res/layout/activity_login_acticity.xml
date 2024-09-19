@@ -5,9 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.LoginActicity">
+    tools:context=".Login.LoginActivity">
 
-    <FrameLayout
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frameLayoutLogin"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

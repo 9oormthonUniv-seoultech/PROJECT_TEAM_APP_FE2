@@ -38,7 +38,7 @@ class LoginIdPwFragment : Fragment() {
         toolbar.setNavigationIcon(R.drawable.icon_close_button)
         // Toolbar 뒤로가기
         toolbar.setNavigationOnClickListener {
-            requireActivity().supportFragmentManager.beginTransaction().remove(this).commit()
+            requireActivity().supportFragmentManager.popBackStack() // 뒤로가기
         }
     }
 

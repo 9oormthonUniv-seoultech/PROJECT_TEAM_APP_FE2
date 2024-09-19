@@ -22,7 +22,7 @@
             android:name=".FCM.FcmActivity"
             android:exported="false" />
         <activity
-            android:name=".Login.LoginActicity"
+            android:name=".Login.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
