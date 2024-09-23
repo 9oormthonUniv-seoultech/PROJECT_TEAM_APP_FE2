@@ -11,8 +11,8 @@
         android:id="@+id/imageViewHomeLogo"
         android:layout_width="175dp"
         android:layout_height="175dp"
-        android:layout_marginTop="110dp"
-        android:src="@drawable/ic_launcher_foreground"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/icon_billage_logo"
         android:background="#D9D9D9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -20,130 +20,130 @@
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="#D9D9D9"/>
 
-    <TextView
-        android:id="@+id/textViewId"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/linearLayoutIntroduction"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="아이디(웹메일)"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/editTextLoginId"
-        android:layout_marginHorizontal="30dp"/>
+        app:layout_constraintTop_toBottomOf="@id/imageViewHomeLogo"
+        android:layout_marginTop="37dp"
+        android:gravity="center">
 
-    <EditText
+        <TextView
+            android:id="@+id/textViewOpeningMent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="빌리지로 어서오세요!"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textViewOpeningIntro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서울과학기술대학교 강의실 대여 서비스"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextLoginId"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/edittext_login"
-        android:layout_marginTop="45dp"
-        app:layout_constraintTop_toBottomOf="@id/imageViewHomeLogo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="30dp"
-        android:inputType="textEmailAddress"/>
-
-    <TextView
-        android:id="@+id/textViewPw"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="비밀번호"
+        android:layout_marginTop="100dp"
+        android:layout_marginHorizontal="30dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutIntroduction"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/editTextLoginPw"
-        android:layout_marginHorizontal="30dp"/>
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:hint="아이디(학번)"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/editTextLoginPw"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@drawable/edittext_login"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="30dp"
         app:layout_constraintTop_toBottomOf="@id/editTextLoginId"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="30dp"
-        android:inputType="textPassword"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:hint="비밀번호"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="로그인"
-        android:backgroundTint="#B7C9FF"
-        android:textColor="#35363E"
+        android:backgroundTint="#6C4BF5"
+        android:textColor="@color/white"
         android:fontFamily="@font/pretendard_font"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="30dp"
         app:layout_constraintTop_toBottomOf="@id/editTextLoginPw"
         app:layout_constraintEnd_toEndOf="@id/editTextLoginPw"/>
 
     <LinearLayout
-        android:id="@+id/linearLayoutForId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:id="@+id/linearLayoutForRegister"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/buttonLogin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <LinearLayout
-            android:id="@+id/linearLayoutForgetPw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-            <TextView
-                android:id="@+id/textViewForgetPw"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="비밀번호를 잊어버리셨나요?"
-                />
+        app:layout_constraintEnd_toEndOf="parent">
             <TextView
                 android:id="@+id/textViewFindPw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textview_find_pw"/>
+                android:text="@string/textview_find_pw"
+                android:layout_margin="5dp"/>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutRegister"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <TextView
-                android:id="@+id/textViewFirst"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="처음이라면?"
-                />
             <TextView
                 android:id="@+id/textViewRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/textview_register"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutQA"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center"
-            android:layout_marginTop="150dp">
-
-            <TextView
-                android:id="@+id/textViewQA"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="문의사항이 있다면?"/>
-
-            <TextView
-                android:id="@+id/textViewQuestion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/textview_question"/>
-        </LinearLayout>
+                android:text="@string/textview_register"
+                android:layout_margin="5dp"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutQA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutForRegister"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextVie
+            android:id="@+id/textViewQA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textview_copyright"/>
+
+        <TextView
+            android:id="@+id/textViewQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textview_question"/>
+        </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

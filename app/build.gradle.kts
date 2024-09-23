@@ -72,6 +72,9 @@ dependencies {
     implementation("androidx.fragment:fragment:1.8.3")
     implementation("androidx.fragment:fragment-ktx:1.8.3")
 
+    // Material 디자인
+    implementation("com.google.android.material:material:1.12.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
