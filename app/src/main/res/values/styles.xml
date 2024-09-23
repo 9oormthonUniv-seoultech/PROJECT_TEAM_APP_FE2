@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LOGO">
+        <item name="android:fontFamily">@font/pretendard_extra_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="head">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="head2">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="body_bold">
+        <item name="android:fontFamily">@font/pretendard_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="body_semi_bold">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="body">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="option">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="par">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="sub">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="times">
+        <item name="android:fontFamily">@font/pretendard_semi_bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="calendar">
+        <item name="android:fontFamily">@font/pretendard_extra_light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+    <style name="navigation_bar">
+        <item name="android:fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingExtra">0dp</item>
+    </style>
+
+</resources>
