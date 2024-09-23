@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="wh">#FBFBFB</color>
+    <color name="G1">#0E0D0E</color>
+    <color name="G2">#3D3C3E</color>
+    <color name="G3">#828183</color>
+    <color name="G4">#EDEDED</color>
+    <color name="G5">#E4E3E4</color>
+    <color name="color1">#6C4BF5</color>
+    <color name="color2">#FFF41D</color>
+    <color name="error">#FF0000</color>
+    <color name="blue">#006FFF</color>
+    <color name="yellow_side">#FCF9B8</color>
+    <color name="whg">#F4F4F4</color>
 </resources>

@@ -13,12 +13,10 @@
         android:layout_height="175dp"
         android:layout_marginTop="60dp"
         android:src="@drawable/icon_billage_logo"
-        android:background="#D9D9D9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="#D9D9D9"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <LinearLayout
         android:id="@+id/linearLayoutIntroduction"
@@ -36,14 +34,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="빌리지로 어서오세요!"
-            android:textSize="20sp"/>
+            android:textColor="@color/G1"
+            style="@style/head"/>
 
         <TextView
             android:id="@+id/textViewOpeningIntro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="서울과학기술대학교 강의실 대여 서비스"
-            android:textSize="14sp"/>
+            android:textColor="@color/G1"
+            style="@style/par"/>
 
     </LinearLayout>
 
@@ -57,11 +57,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="textEmailAddress"
-            android:hint="아이디(학번)"/>
+            android:hint="아이디(학번)"
+            android:textColor="@color/G3"
+            android:background="@drawable/background_edittext"
+            style="@style/body"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,24 +78,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="textPassword"
-            android:hint="비밀번호"/>
+            android:hint="비밀번호"
+            android:textColor="@color/G3"
+            android:background="@drawable/background_edittext"
+            style="@style/body"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="로그인"
-        android:backgroundTint="#6C4BF5"
+        android:background="@drawable/background_login_button"
         android:textColor="@color/white"
-        android:fontFamily="@font/pretendard_font"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="30dp"
+        style="@style/body_bold"
         app:layout_constraintTop_toBottomOf="@id/editTextLoginPw"
         app:layout_constraintEnd_toEndOf="@id/editTextLoginPw"/>
 
@@ -110,14 +116,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/textview_find_pw"
-                android:layout_margin="5dp"/>
+                android:textColor="@color/G1"
+                android:layout_margin="5dp"
+                style="@style/par"/>
 
             <TextView
                 android:id="@+id/textViewRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/textview_register"
-                android:layout_margin="5dp"/>
+                android:layout_margin="5dp"
+                android:textColor="@color/G1"
+                style="@style/par"/>
 
     </LinearLayout>
 
@@ -128,22 +138,26 @@
         android:orientation="horizontal"
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="30dp"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutForRegister"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextVie
+        <TextView
             android:id="@+id/textViewQA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textview_copyright"/>
+            android:text="@string/textview_copyright"
+            android:textColor="@color/G3"/>
 
         <TextView
             android:id="@+id/textViewQuestion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/textview_question"/>
+            android:text="@string/textview_question"
+            android:textColor="@color/G1"
+            style="@style/par"/>
         </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
