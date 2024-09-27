@@ -27,6 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbarLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        style="@style/body"
         />
 
     <FrameLayout
@@ -45,9 +46,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/background_edittext"
-            android:inputType="textEmailAddress"
+            android:inputType="text"
             android:hint="학번"
             android:paddingHorizontal="22dp"
+            android:nextFocusDown="@id/editTextPhone"
+            style="@style/body"
             />
 
         <ImageView
@@ -56,7 +59,8 @@
             android:layout_height="wrap_content"
             android:src="@drawable/icon_student_id_check"
             android:layout_gravity="center|end"
-            android:layout_marginEnd="14dp"/>
+            android:layout_marginEnd="14dp"
+            android:visibility="invisible"/>
 
 
     </FrameLayout>
@@ -67,6 +71,7 @@
         android:layout_height="wrap_content"
         android:text="학번당 1회만 가입할 수 있습니다"
         android:textColor="@color/G3"
+        android:layout_marginStart="10dp"
         app:layout_constraintTop_toBottomOf="@id/linearLayoutStudentId"
         app:layout_constraintStart_toStartOf="@id/linearLayoutStudentId"
         style="@style/par"/>
@@ -83,6 +88,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="20dp"
         android:paddingHorizontal="22dp"
+        style="@style/body"
         />
 
     <Button

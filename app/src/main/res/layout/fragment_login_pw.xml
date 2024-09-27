@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.LoginPwFragment">
+
+    <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbarPw"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="#d9d9d9"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/frameLayoutPw"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="18dp"
+        android:paddingHorizontal="22dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarPw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editTextPw"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_edittext"
+            android:hint="비밀번호"
+            android:paddingHorizontal="22dp"
+            style="@style/body"
+            />
+
+        <ImageView
+            android:id="@+id/imageViewPwEyeCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutPwCheck"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="18dp"
+        android:paddingHorizontal="22dp"
+        app:layout_constraintTop_toBottomOf="@id/frameLayoutPw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editTextPwCheck"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/background_edittext"
+            android:paddingHorizontal="22dp"
+            android:hint="비밀번호 확인"
+            style="@style/body"
+            />
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
