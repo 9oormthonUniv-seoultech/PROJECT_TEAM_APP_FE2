@@ -5,8 +5,11 @@
     <string name="textview_find_pw">비밀번호 찾기</string>
     <string name="textview_register">회원가입 하기</string>
     <string name="textview_question">문의하기</string>
+    <string name="textview_select_1">단과 대학을 선택해주세요</string>
+    <string name="textview_select_2">학과를 선택해주세요</string>
     <string name="toolbar_register">필수 정보 입력</string>
     <string name="toolbar_registerPw">비밀번호 입력</string>
+    <string name="toolbar_student_inform">학적 정보 입력</string>
     <string name="textview_copyright">Copyright © 9oormiz2024. All rights reserved.</string>
     <string name="button_id_check">확인</string>
 </resources>

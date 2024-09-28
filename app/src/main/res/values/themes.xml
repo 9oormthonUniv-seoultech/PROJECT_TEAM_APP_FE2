@@ -4,6 +4,13 @@
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/color1</item>
     </style>
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialogTheme</item>
+    </style>
+    
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="background">@android:color/transparent</item>
+    </style>
 
     <style name="Theme.Billage" parent="Base.Theme.Billage" />
 </resources>

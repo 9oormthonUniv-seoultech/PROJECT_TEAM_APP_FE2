@@ -17,6 +17,7 @@ import androidx.appcompat.widget.Toolbar
 import com.example.billage.R
 import com.example.billage.databinding.FragmentLoginIdPwBinding
 
+// Fragment Index 1
 
 class LoginIdPwFragment : Fragment() {
     private var _binding : FragmentLoginIdPwBinding? = null
@@ -34,9 +35,11 @@ class LoginIdPwFragment : Fragment() {
     ): View? {
         _binding = FragmentLoginIdPwBinding.inflate(inflater, container, false)
         val view = binding.root
-//        toggleMakePwEye()
-//        toggleCheckPwEye()
         isStudentIdCheck()
+        // 다음으로 버튼을 누를 경우 LoginPwFragment로 이동
+        binding.buttonLoginNext.setOnClickListener {
+            (activity as LoginActivity).changeFragment(2)
+        }
         return view
     }
 
@@ -50,6 +53,7 @@ class LoginIdPwFragment : Fragment() {
         toolbar.setNavigationOnClickListener {
             requireActivity().supportFragmentManager.popBackStack() // 뒤로가기
         }
+
     }
 
     override fun onDestroyView() {
@@ -57,48 +61,8 @@ class LoginIdPwFragment : Fragment() {
         _binding = null
     }
 
-    // 비밀번호 보이게하는 토글
-//    fun toggleMakePwEye(){
-//        val btnEye = binding.imageButtonMakePwEye
-//        val editTextMakePw = binding.editTextMakePw
-//        btnEye.setOnClickListener {
-//            when(it.tag){
-//                "0" -> {
-//                    btnEye.tag = "1"
-//                    editTextMakePw.transformationMethod = HideReturnsTransformationMethod.getInstance()
-//                    btnEye.setImageResource(R.drawable.icon_eye_off)
-//                }
-//                "1" -> {
-//                    btnEye.tag = "0"
-//                    editTextMakePw.transformationMethod = PasswordTransformationMethod.getInstance()
-//                    btnEye.setImageResource(R.drawable.icon_eye_on)
-//                }
-//            }
-//            editTextMakePw.setSelection(editTextMakePw!!.length())
-//        }
-//    }
-//    fun toggleCheckPwEye(){
-//        val btnEye = binding.imageButtonCheckPwEye
-//        val editTextMakePw = binding.editTextCheckPw
-//        btnEye.setOnClickListener {
-//            when(it.tag){
-//                "0" -> {
-//                    btnEye.tag = "1"
-//                    editTextMakePw.transformationMethod = HideReturnsTransformationMethod.getInstance()
-//                    btnEye.setImageResource(R.drawable.icon_eye_off)
-//                }
-//                "1" -> {
-//                    btnEye.tag = "0"
-//                    editTextMakePw.transformationMethod = PasswordTransformationMethod.getInstance()
-//                    btnEye.setImageResource(R.drawable.icon_eye_on)
-//                }
-//            }
-//            editTextMakePw.setSelection(editTextMakePw!!.length())
-//        }
-//    }
-
+    // 학번 중복 체크
     private fun isStudentIdCheck(){
-        // 학번 중복 체크
         val checkImage : ImageView = binding.imageViewStudentIdCheck
         val editTextStudentId = binding.editTextStudentId
         editTextStudentId.setOnKeyListener{ view, keyCode, event ->
