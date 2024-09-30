@@ -1,7 +1,10 @@
 package com.example.billage.Login
 
 import android.content.SharedPreferences.Editor
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.KeyEvent
@@ -15,6 +18,8 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import androidx.core.view.isNotEmpty
 import com.example.billage.R
 import com.example.billage.databinding.FragmentLoginIdPwBinding
 
@@ -36,7 +41,7 @@ class LoginIdPwFragment : Fragment() {
     ): View? {
         _binding = FragmentLoginIdPwBinding.inflate(inflater, container, false)
         val view = binding.root
-        isStudentIdCheck()
+        setStudentIdCheck()
         // 다음으로 버튼을 누를 경우 LoginPwFragment로 이동
         binding.buttonLoginNext.setOnClickListener {
             (activity as LoginActivity).changeFragment(2)
@@ -81,17 +86,47 @@ class LoginIdPwFragment : Fragment() {
         }
     }
 
-//    private fun editTextButtonListener(){
-//        // EditText에서 엔터키 누르면 버튼 눌리게하는 함
-//        val btnNext = binding.buttonLoginNext
-//        val editTextPhone = binding.editTextPhone
-//        editTextPhone.setOnKeyListener{ view, keyCode, event ->
-//            if (keyCode == KEYCODE_ENTER && event.action == ACTION_UP) {
-//                btnNext.setOnClickListener {
-//
-//                }
-//            }
-//        }
-//    }
+    // 학번 입력 시 EditText의 디자인 변환
+    private fun setStudentIdCheck(){
+        var isStudentChecked : Boolean = false
+        val btnNext = binding.buttonLoginNext
+        // 이메일 입력 감지
+        binding.editTextStudentId.addTextChangedListener(object : TextWatcher {
+            // 학번 입력 전
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            // 학번 입력 중
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                if (binding.editTextStudentId.text.toString() == "19101563") {
+                    binding.imageViewStudentIdCheck.visibility = View.VISIBLE
+                    binding.imageViewStudentIdCheck.setImageResource(R.drawable.icon_student_id_checked)
+                    binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_checked)
+                    binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.color1))
+                    binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                    isStudentChecked = true
+                }
+                else if (binding.editTextStudentId.text.length != 8){
+                    binding.imageViewStudentIdCheck.visibility = View.VISIBLE
+                    binding.imageViewStudentIdCheck.setImageResource(R.drawable.icon_student_id_error)
+                    binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_length)
+                    binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.error))
+                    binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                }
+                else {
+                    binding.imageViewStudentIdCheck.visibility = View.VISIBLE
+                    binding.imageViewStudentIdCheck.setImageResource(R.drawable.icon_student_id_error)
+                    binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_error)
+                    binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.error))
+                    binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                }
+            }
 
+            override fun afterTextChanged(p0: Editable?) {
+                if (isStudentChecked == true){
+                    btnNext.isEnabled = true
+                }
+            }
+
+        })
+    }
 }
