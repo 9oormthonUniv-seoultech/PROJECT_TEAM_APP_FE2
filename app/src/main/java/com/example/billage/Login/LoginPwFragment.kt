@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
 import com.example.billage.R
@@ -39,11 +40,9 @@ class LoginPwFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Toolbar 설정
-        val toolbar : Toolbar = binding.toolbarPw
-        toolbar.setTitle(R.string.toolbar_registerPw)
-        toolbar.setNavigationIcon(R.drawable.icon_back_button)
+        val navigationBtn : ImageButton = binding.imageButtonNavigation
         // Toolbar 뒤로가기
-        toolbar.setNavigationOnClickListener {
+        navigationBtn.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack() // 뒤로가기
         }
 

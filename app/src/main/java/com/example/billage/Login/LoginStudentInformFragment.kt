@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import com.example.billage.Modal.ModalBottomSheet
@@ -59,12 +60,9 @@ class LoginStudentInformFragment : Fragment() {
         val btnOpenCollegeBottomSheet = binding.editTextCollege
         val btnOpenMajorBottomSheet = binding.editTextMajor
         // Toolbar 설정
-        val toolbar: Toolbar = binding.toolbarStudentInform
-
-        toolbar.setTitle(R.string.toolbar_student_inform)
-        toolbar.setNavigationIcon(R.drawable.icon_back_button)
+        val navigationBtn : ImageButton = binding.imageButtonNavigation
         // Toolbar 뒤로가기
-        toolbar.setNavigationOnClickListener {
+        navigationBtn.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack() // 뒤로가기
         }
 

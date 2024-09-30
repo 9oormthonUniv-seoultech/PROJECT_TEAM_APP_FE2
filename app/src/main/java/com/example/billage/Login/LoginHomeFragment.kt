@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.billage.databinding.FragmentLoginHomeBinding
 
+// Fragment Index 0
+
 class LoginHomeFragment : Fragment() {
 
     private var _binding : FragmentLoginHomeBinding?= null

@@ -1,13 +1,15 @@
 package com.example.billage.Login
 
+import android.media.Image
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.commit
 import androidx.fragment.app.add
-import com.example.billage.Modal.ModalBottomSheet
 import com.example.billage.R
 import com.example.billage.databinding.ActivityLoginActicityBinding
 
@@ -33,21 +35,22 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-//    fun goRegister(){
-//        val loginIdPwFragment = LoginIdPwFragment()
-//        val transaction = supportFragmentManager.beginTransaction() // transaction을 시작하고 변수에 저장
-//        transaction.replace(R.id.frameLayoutLogin, loginIdPwFragment) // transaction에 loginIdPwFragment를 추가, 뷰바인딩으로 레이아웃을 갖고오면 안됨
-//        transaction.addToBackStack("loginHome") // 백스택에 담아둠 -> 뒤로가기 버튼으로 트랜잭션 전체 제거 가능
-//        transaction.commit()
-//    }
-
     fun changeFragment(index : Int){
         when(index){
+            // LoginHomeFragment
+            0 -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragmentLogin, LoginHomeFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
             // LoginIdPwFragment
             1 -> {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragmentLogin, LoginIdPwFragment())
+                    .addToBackStack(null)
                     .commit()
             }
             // LoginPwFragment
@@ -55,6 +58,7 @@ class LoginActivity : AppCompatActivity() {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragmentLogin, LoginPwFragment())
+                    .addToBackStack(null)
                     .commit()
             }
             // LoginStudnetInfoFragment
@@ -62,8 +66,10 @@ class LoginActivity : AppCompatActivity() {
                 supportFragmentManager
                     .beginTransaction()
                     .replace(R.id.fragmentLogin, LoginStudentInformFragment())
+                    .addToBackStack(null)
                     .commit()
             }
         }
     }
+
 }

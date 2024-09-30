@@ -10,10 +10,36 @@
         android:id="@+id/toolbarStudentInform"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#d9d9d9"
+        android:background="@color/wh"
+        app:contentInsetStart="0dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imageButtonNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_navigation"
+                android:background="@color/white"
+                android:layout_marginStart="22dp"
+                android:layout_gravity="start|center"
+                android:foreground="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/toolbar_student_inform"
+                android:textColor="@color/G1"
+                style="@style/head"/>
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:id="@+id/linearLayoutCollege"
