@@ -71,7 +71,7 @@ class LoginStudentInformFragment : Fragment() {
     }
 
     // Modal창 여는 함수
-    fun modalBottomSheet(btn : EditText, list: MutableList<ModalBottomSheetItem>, url: Int){
+    fun modalBottomSheet(btn : TextView, list: MutableList<ModalBottomSheetItem>, url: Int){
         val adapter = ModalBottomSheetAdapter()
         val bottomSheetFragment = ModalBottomSheet(adapter)
         val textViewSelect = view?.findViewById<TextView>(R.id.textViewSelect)

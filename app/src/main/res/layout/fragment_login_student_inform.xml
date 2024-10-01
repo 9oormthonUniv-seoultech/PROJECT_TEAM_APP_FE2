@@ -68,17 +68,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextCollege"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:paddingHorizontal="20dp"
-                android:hint="선택하세요..."
-                android:inputType="textPassword"
+                android:text="선택하세요..."
+                android:gravity="center|start"
                 android:textColor="@color/G3"
-                android:clickable="false"
-                android:focusable="false"
                 style="@style/body"/>
 
             <ImageView
@@ -121,17 +119,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp">
 
-            <EditText
+            <TextView
                 android:id="@+id/editTextMajor"
                 android:layout_width="match_parent"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:paddingHorizontal="20dp"
-                android:hint="선택하세요..."
-                android:inputType="textPassword"
+                android:text="선택하세요..."
+                android:gravity="start|center"
                 android:textColor="@color/G3"
-                android:clickable="false"
-                android:focusable="false"
                 style="@style/body"/>
 
             <ImageView
@@ -149,12 +145,14 @@
     <Button
         android:id="@+id/buttonPwNext"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:text="다음으로"
-        android:background="@drawable/background_login_button"
+        android:backgroundTint="@drawable/background_login_button"
         android:textColor="@color/white"
         android:layout_margin="20dp"
+        android:paddingVertical="12dp"
         android:foreground="?attr/selectableItemBackground"
+        app:cornerRadius="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

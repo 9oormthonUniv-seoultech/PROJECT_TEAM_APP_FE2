@@ -3,6 +3,7 @@
     <style name="Base.Theme.Billage" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/color1</item>
+        <item name="android:windowBackground">@color/wh</item>
     </style>
     <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/BottomSheetDialogTheme</item>

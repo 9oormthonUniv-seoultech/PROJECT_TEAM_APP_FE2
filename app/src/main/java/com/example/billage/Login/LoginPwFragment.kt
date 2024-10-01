@@ -11,6 +11,8 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
+import androidx.core.widget.addTextChangedListener
 import com.example.billage.R
 import com.example.billage.databinding.FragmentLoginIdPwBinding
 import com.example.billage.databinding.FragmentLoginPwBinding
@@ -55,6 +57,7 @@ class LoginPwFragment : Fragment() {
         // 비밀번호 표시 토글
         toggleMakePwEye(eyeIconPw, pwText)
         toggleMakePwEye(eyeIconPwCheck, pwCheckText)
+        setPwCheck()
     }
 
     // 비밀번호 보이게하는 토글
@@ -76,5 +79,64 @@ class LoginPwFragment : Fragment() {
         }
     }
 
+
+    private fun setPwCheck(){
+        var isPwChecked : Boolean = false
+        var isPwDoubleChecked : Boolean = false
+        val textPw = binding.editTextPw
+        val textPwDouble = binding.editTextPwCheck
+        // 특수문자 정규식
+        val specialCharPattern = Regex("[!@#\$%^&*(),.?\":{}|<>]")
+
+        textPw.addTextChangedListener {
+            val password = textPw.text.toString()
+            if(textPw.text.toString().length >= 8 && textPw.text.toString().length <= 16 && specialCharPattern.containsMatchIn(password)){
+                binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                isPwChecked = true
+                btnEnabled(isPwChecked, isPwDoubleChecked)
+            }
+            else if (specialCharPattern.containsMatchIn(password)){
+                binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                isPwChecked = false
+                btnEnabled(isPwChecked, isPwDoubleChecked)
+
+            }
+            else if (textPw.text.toString().length >= 8 && textPw.text.toString().length <= 16){
+                binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                isPwChecked = false
+                btnEnabled(isPwChecked, isPwDoubleChecked)
+            }
+            else {
+                binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                isPwChecked = false
+                btnEnabled(isPwChecked, isPwDoubleChecked)
+            }
+        }
+        textPwDouble.addTextChangedListener {
+            val password = textPw.text.toString()
+            val passwordDouble = textPwDouble.text.toString()
+            val textViewPwCheck = binding.textViewPwDoubleCheck
+            if (password == passwordDouble){
+                textViewPwCheck.text = "비밀번호 확인 완료"
+                textViewPwCheck.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                isPwDoubleChecked = true
+                btnEnabled(isPwChecked, isPwDoubleChecked)
+            }
+            else {
+                textViewPwCheck.text = "비밀번호가 틀립니다"
+                textViewPwCheck.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                isPwDoubleChecked = false
+                btnEnabled(isPwChecked, isPwDoubleChecked)
+            }
+        }
+    }
+
+    private fun btnEnabled(isPwChecked: Boolean, isPwDouble: Boolean){
+        binding.buttonPwNext.isEnabled = isPwDouble && isPwChecked
+    }
 
 }

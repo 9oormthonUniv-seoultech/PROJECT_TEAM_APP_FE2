@@ -20,6 +20,7 @@ import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.isNotEmpty
+import androidx.core.widget.addTextChangedListener
 import com.example.billage.R
 import com.example.billage.databinding.FragmentLoginIdPwBinding
 
@@ -27,7 +28,6 @@ import com.example.billage.databinding.FragmentLoginIdPwBinding
 
 class LoginIdPwFragment : Fragment() {
     private var _binding : FragmentLoginIdPwBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,7 +89,8 @@ class LoginIdPwFragment : Fragment() {
     // 학번 입력 시 EditText의 디자인 변환
     private fun setStudentIdCheck(){
         var isStudentChecked : Boolean = false
-        val btnNext = binding.buttonLoginNext
+        var isNameEntered : Boolean = false
+        var isPhoneEntered : Boolean = false
         // 이메일 입력 감지
         binding.editTextStudentId.addTextChangedListener(object : TextWatcher {
             // 학번 입력 전
@@ -111,6 +112,7 @@ class LoginIdPwFragment : Fragment() {
                     binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_length)
                     binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.error))
                     binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                    isStudentChecked = false
                 }
                 else {
                     binding.imageViewStudentIdCheck.visibility = View.VISIBLE
@@ -118,15 +120,28 @@ class LoginIdPwFragment : Fragment() {
                     binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_error)
                     binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.error))
                     binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                    isStudentChecked = false
                 }
             }
 
             override fun afterTextChanged(p0: Editable?) {
                 if (isStudentChecked == true){
-                    btnNext.isEnabled = true
                 }
             }
 
         })
+
+        binding.editTextName.addTextChangedListener {
+            isNameEntered = binding.editTextName.text?.toString()?.isNotEmpty() == true
+            btnEnabled(isStudentChecked, isNameEntered, isPhoneEntered)
+        }
+        binding.editTextPhone.addTextChangedListener {
+            isPhoneEntered = binding.editTextPhone.text?.toString()?.isNotEmpty() == true
+            btnEnabled(isStudentChecked, isNameEntered, isPhoneEntered)
+        }
+    }
+
+    private fun btnEnabled(isStudentCheced: Boolean, isNameEntered: Boolean, isPhoneEntered: Boolean){
+        binding.buttonLoginNext.isEnabled = isStudentCheced && isNameEntered && isPhoneEntered
     }
 }
