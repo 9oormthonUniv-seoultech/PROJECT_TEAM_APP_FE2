@@ -103,24 +103,27 @@ class LoginIdPwFragment : Fragment() {
                     binding.imageViewStudentIdCheck.setImageResource(R.drawable.icon_student_id_checked)
                     binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_checked)
                     binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.color1))
-                    binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                    binding.editTextStudentId.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_checked)
                     isStudentChecked = true
+                    btnEnabled(isStudentChecked, isNameEntered, isPhoneEntered)
                 }
                 else if (binding.editTextStudentId.text.length != 8){
                     binding.imageViewStudentIdCheck.visibility = View.VISIBLE
                     binding.imageViewStudentIdCheck.setImageResource(R.drawable.icon_student_id_error)
                     binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_length)
                     binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.error))
-                    binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                    binding.editTextStudentId.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_error)
                     isStudentChecked = false
+                    btnEnabled(isStudentChecked, isNameEntered, isPhoneEntered)
                 }
                 else {
                     binding.imageViewStudentIdCheck.visibility = View.VISIBLE
                     binding.imageViewStudentIdCheck.setImageResource(R.drawable.icon_student_id_error)
                     binding.textViewStudentIdCondition.text = getString(R.string.textview_student_id_error)
                     binding.textViewStudentIdCondition.setTextColor(ContextCompat.getColor(context!!, R.color.error))
-                    binding.textViewStudentIdCondition.setTypeface(null, Typeface.BOLD)
+                    binding.editTextStudentId.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_error)
                     isStudentChecked = false
+                    btnEnabled(isStudentChecked, isNameEntered, isPhoneEntered)
                 }
             }
 

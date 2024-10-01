@@ -93,12 +93,14 @@ class LoginPwFragment : Fragment() {
             if(textPw.text.toString().length >= 8 && textPw.text.toString().length <= 16 && specialCharPattern.containsMatchIn(password)){
                 binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
                 binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                binding.editTextPw.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_checked)
                 isPwChecked = true
                 btnEnabled(isPwChecked, isPwDoubleChecked)
             }
             else if (specialCharPattern.containsMatchIn(password)){
                 binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
                 binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                binding.editTextPw.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_error)
                 isPwChecked = false
                 btnEnabled(isPwChecked, isPwDoubleChecked)
 
@@ -106,12 +108,14 @@ class LoginPwFragment : Fragment() {
             else if (textPw.text.toString().length >= 8 && textPw.text.toString().length <= 16){
                 binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
                 binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                binding.editTextPw.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_error)
                 isPwChecked = false
                 btnEnabled(isPwChecked, isPwDoubleChecked)
             }
             else {
                 binding.textViewEnglishCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
                 binding.textViewCharCondition.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                binding.editTextPw.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_error)
                 isPwChecked = false
                 btnEnabled(isPwChecked, isPwDoubleChecked)
             }
@@ -123,12 +127,14 @@ class LoginPwFragment : Fragment() {
             if (password == passwordDouble){
                 textViewPwCheck.text = "비밀번호 확인 완료"
                 textViewPwCheck.setTextColor(ContextCompat.getColor(requireContext(), R.color.color1))
+                binding.editTextPwCheck.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_checked)
                 isPwDoubleChecked = true
                 btnEnabled(isPwChecked, isPwDoubleChecked)
             }
             else {
                 textViewPwCheck.text = "비밀번호가 틀립니다"
                 textViewPwCheck.setTextColor(ContextCompat.getColor(requireContext(), R.color.error))
+                binding.editTextPwCheck.background = ContextCompat.getDrawable(requireContext(), R.drawable.background_edittext_error)
                 isPwDoubleChecked = false
                 btnEnabled(isPwChecked, isPwDoubleChecked)
             }
