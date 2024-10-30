@@ -5,12 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.billage.Login.LoginActivity
 import com.example.billage.R
+import com.example.billage.databinding.FragmentLoginStudentInformBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ModalBottomSheet(val adapter: ModalBottomSheetAdapter) : BottomSheetDialogFragment(){
+class ModalBottomSheet(val adapter: ModalBottomSheetAdapter, var miniTitle: String) : BottomSheetDialogFragment(){
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -18,6 +22,7 @@ class ModalBottomSheet(val adapter: ModalBottomSheetAdapter) : BottomSheetDialog
     ): View? {
         val view = inflater.inflate(R.layout.layout_bottom_sheet, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerViewBottomSheet)
+        view.findViewById<TextView>(R.id.textViewSelect).text = miniTitle
 
         recyclerView.adapter = adapter
 
@@ -26,6 +31,8 @@ class ModalBottomSheet(val adapter: ModalBottomSheetAdapter) : BottomSheetDialog
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
     }
 
     companion object{
@@ -33,4 +40,6 @@ class ModalBottomSheet(val adapter: ModalBottomSheetAdapter) : BottomSheetDialog
     }
 
     override fun getTheme(): Int = R.style.BottomSheetDialogTheme
+
+
 }

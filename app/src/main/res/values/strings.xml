@@ -10,6 +10,7 @@
     <string name="toolbar_register">필수 정보 입력</string>
     <string name="toolbar_registerPw">비밀번호 입력</string>
     <string name="toolbar_student_inform">학적 정보 입력</string>
+    <string name="toolbar_email">이메일 입력</string>
     <string name="textview_copyright">Copyright © 9oormiz2024. All rights reserved.</string>
     <string name="button_id_check">확인</string>
     <string name="textview_student_id_error">이미 가입된 학번입니다</string>

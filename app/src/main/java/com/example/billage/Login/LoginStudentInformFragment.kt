@@ -2,6 +2,7 @@ package com.example.billage.Login
 
 import android.os.Bundle
 import android.text.Layout
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,9 +24,16 @@ import java.lang.reflect.Array
 
 // Fragment Index 3
 
-class LoginStudentInformFragment : Fragment() {
+class LoginStudentInformFragment : Fragment(), ModalBottomSheetAdapter.OnItemClickListener {
 
+    lateinit var adapter : ModalBottomSheetAdapter
     lateinit var binding : FragmentLoginStudentInformBinding
+    lateinit var bottomSheet : ModalBottomSheet
+    var isCollegeSelected = false
+    var isMajorSelected = false
+    var collegeForButton = false
+    var majorForButton = false
+
     // 학과 전공 dummy data
     val collegeList = mutableListOf(
         ModalBottomSheetItem("공과대학"),
@@ -51,14 +59,18 @@ class LoginStudentInformFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentLoginStudentInformBinding.inflate(inflater, container, false)
+
+        binding.buttonStudentInformNext.setOnClickListener {
+            (activity as LoginActivity).changeFragment(4)
+        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // 소속 단과 대학 버튼
-        val btnOpenCollegeBottomSheet = binding.editTextCollege
-        val btnOpenMajorBottomSheet = binding.editTextMajor
+        adapter = ModalBottomSheetAdapter(this)
+        bottomSheet = ModalBottomSheet(adapter, "")
+
         // Toolbar 설정
         val navigationBtn : ImageButton = binding.imageButtonNavigation
         // Toolbar 뒤로가기
@@ -66,23 +78,55 @@ class LoginStudentInformFragment : Fragment() {
             requireActivity().supportFragmentManager.popBackStack() // 뒤로가기
         }
 
-        modalBottomSheet(btnOpenCollegeBottomSheet, collegeList, 1)
-        modalBottomSheet(btnOpenMajorBottomSheet, majorList, 2)
+        // 소속 단과 대학 버튼
+        val btnOpenCollegeBottomSheet = binding.textViewSelectedCollege
+        val btnOpenMajorBottomSheet = binding.textViewSelectedMajor
+
+        btnOpenCollegeBottomSheet.setOnClickListener {
+            isCollegeSelected = true
+            modalBottomSheet(collegeList, getString(R.string.textview_select_1), bottomSheet)
+        }
+        btnOpenMajorBottomSheet.setOnClickListener {
+            isMajorSelected = true
+            modalBottomSheet(majorList, getString(R.string.textview_select_2), bottomSheet)
+
+        }
     }
 
     // Modal창 여는 함수
-    fun modalBottomSheet(btn : TextView, list: MutableList<ModalBottomSheetItem>, url: Int){
-        val adapter = ModalBottomSheetAdapter()
-        val bottomSheetFragment = ModalBottomSheet(adapter)
-        val textViewSelect = view?.findViewById<TextView>(R.id.textViewSelect)
-        adapter.setItem(list)
+    fun modalBottomSheet(list: MutableList<ModalBottomSheetItem>, miniTitle: String, bottomsheet: ModalBottomSheet){
+        if (!bottomsheet.isAdded) {
+            bottomsheet.adapter.setItem(list)
+            bottomsheet.miniTitle = miniTitle
+            // item 클릭 시 TextView 업데이트
+            // onItemClick(list, btn)
 
-
-
-        val sfm = (activity as LoginActivity).supportFragmentManager
-        btn.setOnClickListener {
-            bottomSheetFragment.show(sfm, TAG)
+            val sfm = (activity as LoginActivity).supportFragmentManager
+            bottomsheet.show(sfm, ModalBottomSheet.TAG)
         }
+    }
+
+    override fun onItemClick(item: ModalBottomSheetItem) {
+        if (isCollegeSelected){
+            binding.textViewSelectedCollege.text = item.name
+            isCollegeSelected = false
+            collegeForButton = true
+        }
+        else {
+            binding.textViewSelectedMajor.text = item.name
+            isMajorSelected = false
+            majorForButton = true
+        }
+        if (isAdded){
+            bottomSheet.dismiss()
+        }
+
+        checkSelections()
+    }
+
+    // Colleg & Major가 선택이 됐을 경우에 '다음으로' 버튼 활성화
+    private fun checkSelections(){
+        binding.buttonStudentInformNext.isEnabled = collegeForButton&&majorForButton
     }
 
 //    // EditText 비활성화

@@ -6,16 +6,17 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.billage.R
+import com.example.billage.databinding.LayoutListViewBottomSheetItemBinding
 
-class ModalBottomSheetAdapter : RecyclerView.Adapter<ModalBottomSheetAdapter.Holder>() {
+class ModalBottomSheetAdapter(private val listener: OnItemClickListener) : RecyclerView.Adapter<ModalBottomSheetAdapter.Holder>() {
     private var itemList : MutableList<ModalBottomSheetItem> = ArrayList()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ModalBottomSheetAdapter.Holder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.layout_list_view_bottom_sheet_item, parent, false)
-        return Holder(view)
+        val view = Holder(LayoutListViewBottomSheetItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return view
     }
 
     override fun onBindViewHolder(holder: ModalBottomSheetAdapter.Holder, position: Int) {
@@ -32,10 +33,19 @@ class ModalBottomSheetAdapter : RecyclerView.Adapter<ModalBottomSheetAdapter.Hol
         notifyDataSetChanged()
     }
 
-    inner class Holder(val view: View) : RecyclerView.ViewHolder(view){
+    inner class Holder(var binding: LayoutListViewBottomSheetItemBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(item: ModalBottomSheetItem){
-            view.findViewById<TextView>(R.id.textViewBottomSheetItem).text = item.name
+            binding.textViewBottomSheetItem.text = item.name
+            binding.root.setOnClickListener {
+                // RecyclerView 아이템 클릭 시 이벤트 발생
+                listener.onItemClick(item)
+            }
         }
+    }
+
+    // 클릭 이벤트를 전달하기위한 인터페이스
+    interface OnItemClickListener {
+        fun onItemClick(item: ModalBottomSheetItem)
     }
 
 }

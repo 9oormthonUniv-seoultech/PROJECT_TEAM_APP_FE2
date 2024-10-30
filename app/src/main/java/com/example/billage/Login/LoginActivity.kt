@@ -69,6 +69,14 @@ class LoginActivity : AppCompatActivity() {
                     .addToBackStack(null)
                     .commit()
             }
+            // LoginEmailFragment
+            4 -> {
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.fragmentLogin, LoginEmailFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
         }
     }
 
