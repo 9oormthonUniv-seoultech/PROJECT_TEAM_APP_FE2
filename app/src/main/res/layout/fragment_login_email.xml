@@ -143,51 +143,74 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/sign_certNum1"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:background="@drawable/background_edittext"
-                android:layout_weight="1"/>
-
-            <EditText
-                android:id="@+id/sign_certNum2"
+                android:id="@+id/sign_certNum_1"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
+                android:nextFocusRight="@id/sign_certNum_2"
+                android:gravity="center"
+                android:textColor="@color/black"
+                style="@style/body_semi_bold"/>
 
             <EditText
-                android:id="@+id/sign_certNum3"
+                android:id="@+id/sign_certNum_2"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp"
+                android:nextFocusRight="@id/sign_certNum_3"
+                android:gravity="center"
+                android:textColor="@color/black"
+                style="@style/body_semi_bold"/>
 
             <EditText
-                android:id="@+id/sign_certNum4"
+                android:id="@+id/sign_certNum_3"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp"
+                android:nextFocusRight="@id/sign_certNum_4"
+                android:gravity="center"
+                android:textColor="@color/black"
+                style="@style/body_semi_bold"/>
 
             <EditText
-                android:id="@+id/sign_certNum5"
+                android:id="@+id/sign_certNum_4"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp"
+                android:nextFocusRight="@id/sign_certNum_5"
+                android:gravity="center"
+                android:textColor="@color/black"
+                style="@style/body_semi_bold"/>
 
             <EditText
-                android:id="@+id/sign_certNum6"
+                android:id="@+id/sign_certNum_5"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:background="@drawable/background_edittext"
                 android:layout_weight="1"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp"
+                android:nextFocusRight="@id/sign_certNum_6"
+                android:gravity="center"
+                android:textColor="@color/black"
+                style="@style/body_semi_bold"/>
+
+            <EditText
+                android:id="@+id/sign_certNum_6"
+                android:layout_width="52dp"
+                android:layout_height="52dp"
+                android:background="@drawable/background_edittext"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                style="@style/body_semi_bold"/>
 
         </LinearLayout>
 
