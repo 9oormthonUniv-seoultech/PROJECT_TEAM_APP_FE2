@@ -69,7 +69,7 @@
             >
 
             <EditText
-                android:id="@+id/editTextLoginId"
+                android:id="@+id/editTextEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="52dp"
                 android:paddingStart="22dp"
@@ -86,10 +86,11 @@
                 android:id="@+id/buttonAccept"
                 android:layout_width="wrap_content"
                 android:layout_height="52dp"
-                android:background="@drawable/background_edittext_checked"
+                android:background="@drawable/background_edittext_accept_button"
                 android:text="인증하기"
                 android:textColor="@color/color1"
                 android:layout_weight="1"
+                android:enabled="false"
                 style="@style/body"/>
 
         </LinearLayout>
@@ -210,6 +211,7 @@
                 android:layout_marginStart="8dp"
                 android:gravity="center"
                 android:textColor="@color/black"
+                android:maxLength="1"
                 style="@style/body_semi_bold"/>
 
         </LinearLayout>
