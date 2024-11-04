@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1049868451619",
+    "project_id": "billage-b2c9b",
+    "storage_bucket": "billage-b2c9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049868451619:android:f3e770b223ed268560d696",
+        "android_client_info": {
+          "package_name": "com.example.billage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrBsmPeD4S7evKHPKWfRK_Fp8NgqymnsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -36,7 +36,7 @@ class ApiClient(val context: Context){
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    val apiService = retrofit.create(ApiService::class.java)
+    //val apiService = retrofit.create(ApiService::class.java)
 
     /*
     *  Retrofit SSL 우회 접속 통신

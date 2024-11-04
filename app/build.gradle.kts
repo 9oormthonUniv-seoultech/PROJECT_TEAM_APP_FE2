@@ -1,7 +1,12 @@
+import org.apache.tools.ant.util.JavaEnvUtils.VERSION_1_8
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("com.google.gms.google-services")
+}
+configurations.implementation{
+    exclude(group = "com.intellij", module = "annotations")
 }
 
 android {
@@ -37,7 +42,9 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
@@ -61,13 +68,20 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("com.squareup.okhttp3:okhttp-urlconnection:4.9.1")
 
+    // Fragment
+    implementation("androidx.fragment:fragment:1.8.3")
+    implementation("androidx.fragment:fragment-ktx:1.8.3")
+
+    // Material 디자인
+    implementation("com.google.android.material:material:1.12.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.compiler)
     implementation(libs.androidx.work.runtime.ktx)
-//    implementation(libs.androidx.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

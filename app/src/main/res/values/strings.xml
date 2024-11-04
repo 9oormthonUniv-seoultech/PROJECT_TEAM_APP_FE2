@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Billage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textview_find_pw">비밀번호 찾기</string>
+    <string name="textview_register">회원가입 하기</string>
+    <string name="textview_question">문의하기</string>
+    <string name="textview_select_1">단과 대학을 선택해주세요</string>
+    <string name="textview_select_2">학과를 선택해주세요</string>
+    <string name="toolbar_register">필수 정보 입력</string>
+    <string name="toolbar_registerPw">비밀번호 입력</string>
+    <string name="toolbar_student_inform">학적 정보 입력</string>
+    <string name="toolbar_email">이메일 입력</string>
+    <string name="toolbar_agree">서비스 정책 동의</string>
+    <string name="textview_copyright">Copyright © 9oormiz2024. All rights reserved.</string>
+    <string name="button_id_check">확인</string>
+    <string name="textview_student_id_error">이미 가입된 학번입니다</string>
+    <string name="textview_student_id_length">올바른 학번을 입력해주세요</string>
+    <string name="textview_student_id_checked">사용 가능한 학번입니다</string>
+    <string name="textview_welcome_ment">빌리지에 어서오세요!</string>
 </resources>

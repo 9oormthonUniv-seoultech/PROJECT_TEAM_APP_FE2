@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Login.LoginIdPwFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarLogin"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/wh"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imageButtonNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_navigation"
+                android:background="@color/white"
+                android:layout_marginStart="22dp"
+                android:layout_gravity="start|center"
+                android:foreground="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/toolbar_register"
+                android:textColor="@color/G1"
+                style="@style/head"/>
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/background_edittext"
+        android:hint="이름"
+        android:paddingStart="22dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:inputType="textPersonName"
+        style="@style/body"
+        />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/editTextName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:layout_marginHorizontal="20dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/toolbarLogin"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent">-->
+
+
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+
+
+    <FrameLayout
+        android:id="@+id/linearLayoutStudentId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextStudentId"
+            style="@style/body"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:paddingStart="22dp"
+            android:background="@drawable/background_edittext"
+            android:hint="학번"
+            android:inputType="number"
+            android:nextFocusDown="@id/editTextPhone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+
+        <ImageView
+            android:id="@+id/imageViewStudentIdCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_student_id_check"
+            android:layout_gravity="center|end"
+            android:layout_marginEnd="14dp"
+            android:visibility="invisible"/>
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textViewStudentIdCondition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="학번 당 1회만 가입할 수 있습니다"
+        android:textColor="@color/G3"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutStudentId"
+        app:layout_constraintStart_toStartOf="@id/linearLayoutStudentId"
+        style="@style/par"/>
+
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        style="@style/body"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="56dp"
+        android:paddingStart="22dp"
+        android:background="@drawable/background_edittext"
+        android:hint="전화번호 입력 ..."
+        android:inputType="phone"
+        android:textColor="@color/G3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutStudentId" />
+
+    <Button
+        android:id="@+id/buttonLoginNext"
+        style="@style/body_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:paddingVertical="12dp"
+        android:backgroundTint="@drawable/background_login_button"
+        android:enabled="false"
+        android:foreground="?attr/selectableItemBackground"
+        android:text="다음으로"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

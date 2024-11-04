@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.LoginAgreeFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarAgree"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/wh"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imageButtonNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_navigation"
+                android:background="@color/white"
+                android:layout_marginStart="22dp"
+                android:layout_gravity="start|center"
+                android:foreground="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/toolbar_agree"
+                android:textColor="@color/G1"
+                style="@style/head"/>
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    
+    <ImageView
+        android:id="@+id/imageViewAgreeLogo"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/icon_billage_logo"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbarAgree"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="@string/textview_welcome_ment"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintTop_toBottomOf="@id/imageViewAgreeLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/head"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAgree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="42dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewWelcome">
+
+        <LinearLayout
+            android:id="@+id/lienarLayoutAgreeCheck01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="120dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/imageViewCheck01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_agree_checked"/>
+
+            <TextView
+                android:id="@+id/textViewAgreeCheck01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서비스 이용약관 동의(필수)"
+                android:textColor="@color/G1"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/imageViewArrowRight01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_right"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lienarLayoutAgreeCheck02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/imageViewCheck02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_agree_unchecked"/>
+
+            <TextView
+                android:id="@+id/textViewAgreeCheck02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="개인정보 수집 및 이용동의(필수)"
+                android:textColor="@color/G1"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:textSize="14sp"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/imageViewArrowRight02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_arrow_right"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="32.5dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutAgree"
+        android:foreground="@color/G5"/>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAllAgree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="42dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintTop_toBottomOf="@id/viewLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageViewCircleUnchecked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_circle_unchecked"/>
+
+        <TextView
+            android:id="@+id/textViewAllAgree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="전체 동의"
+            android:textColor="@color/G1"
+            android:layout_marginStart="10dp"
+            android:textSize="18sp"
+            android:fontFamily="@font/pretendard_regular"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonEmailNext"
+        style="@style/body_bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@drawable/background_login_button"
+        android:enabled="false"
+        android:foreground="?attr/selectableItemBackground"
+        android:paddingVertical="12dp"
+        android:text="가입하기"
+        android:textColor="@color/white"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.LoginStudentInformFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarStudentInform"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/wh"
+        app:contentInsetStart="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imageButtonNavigation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_navigation"
+                android:background="@color/white"
+                android:layout_marginStart="22dp"
+                android:layout_gravity="start|center"
+                android:foreground="?attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/toolbar_student_inform"
+                android:textColor="@color/G1"
+                style="@style/head"/>
+        </FrameLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutCollege"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/toolbarStudentInform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="19dp"
+        >
+
+        <TextView
+            android:id="@+id/textViewCollege"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="소속 단과 대학"
+            android:textColor="@color/G1"
+            style="@style/body_semi_bold"/>
+
+
+        <FrameLayout
+            android:id="@+id/frameLayoutCollege"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/textViewSelectedCollege"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/background_edittext"
+                android:paddingHorizontal="20dp"
+                android:text="선택하세요..."
+                android:gravity="center|start"
+                android:textColor="@color/G3"
+                style="@style/body"/>
+
+            <ImageView
+                android:id="@+id/imageViewCollege"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:src="@drawable/icon_dropdown"
+                android:layout_marginEnd="14dp"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMajor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutCollege"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        >
+
+        <TextView
+            android:id="@+id/textViewMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="소속 학과"
+            android:textColor="@color/G1"
+            style="@style/body_semi_bold"/>
+
+
+        <FrameLayout
+            android:id="@+id/frameLayoutMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/textViewSelectedMajor"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@drawable/background_edittext"
+                android:paddingHorizontal="20dp"
+                android:text="선택하세요..."
+                android:gravity="start|center"
+                android:textColor="@color/G3"
+                style="@style/body"/>
+
+            <ImageView
+                android:id="@+id/imageViewMajor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
+                android:src="@drawable/icon_dropdown"
+                android:layout_marginEnd="14dp"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonStudentInformNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다음으로"
+        android:backgroundTint="@drawable/background_login_button"
+        android:enabled="false"
+        android:textColor="@color/white"
+        android:layout_margin="20dp"
+        android:paddingVertical="12dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cornerRadius="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/body_bold"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
