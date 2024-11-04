@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="15dp"
+    android:paddingTop="11dp"
+    android:paddingBottom="19dp">
+
+    <TextView
+        android:id="@+id/textView_9"
+        style="@style/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:textColor="@color/G3"
+        app:layout_constraintBottom_toTopOf="@+id/time_box_9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_12"
+        style="@style/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12"
+        android:textColor="@color/G3"
+        app:layout_constraintBottom_toTopOf="@+id/time_box_12"
+        app:layout_constraintStart_toStartOf="@+id/time_box_12"
+        app:layout_constraintEnd_toStartOf="@+id/time_box_12"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_15"
+        style="@style/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15"
+        android:textColor="@color/G3"
+        app:layout_constraintBottom_toTopOf="@+id/time_box_15"
+        app:layout_constraintStart_toStartOf="@+id/time_box_15"
+        app:layout_constraintEnd_toStartOf="@+id/time_box_15"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_18"
+        style="@style/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18"
+        android:textColor="@color/G3"
+        app:layout_constraintBottom_toTopOf="@+id/time_box_18"
+        app:layout_constraintStart_toStartOf="@+id/time_box_18"
+        app:layout_constraintEnd_toStartOf="@+id/time_box_18"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_21"
+        style="@style/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:textColor="@color/G3"
+        app:layout_constraintBottom_toTopOf="@+id/time_box_21"
+        app:layout_constraintStart_toStartOf="@+id/time_box_21"
+        app:layout_constraintEnd_toStartOf="@+id/time_box_21"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_24"
+        style="@style/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24"
+        android:textColor="@color/G3"
+        app:layout_constraintBottom_toTopOf="@+id/time_box_23"
+        app:layout_constraintEnd_toEndOf="@+id/time_box_23"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/divider_left"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:background="@color/G2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_9"
+        app:layout_constraintTop_toBottomOf="@+id/time_box_9"
+        app:layout_constraintTop_toTopOf="@+id/time_box_9" />
+
+    <View
+        android:id="@+id/divider_right"
+        android:layout_width="0.5dp"
+        android:layout_height="0dp"
+        android:background="@color/G2"
+        app:layout_constraintBottom_toBottomOf="@+id/time_box_23"
+        app:layout_constraintStart_toEndOf="@+id/time_box_23"
+        app:layout_constraintTop_toTopOf="@+id/time_box_23" />
+
+    <TextView
+        android:id="@+id/time_box_9"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/divider_left"
+        app:layout_constraintTop_toBottomOf="@+id/textView_9" />
+
+    <TextView
+        android:id="@+id/time_box_10"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_9"
+        app:layout_constraintStart_toEndOf="@id/time_box_9"
+        app:layout_constraintTop_toTopOf="@id/time_box_9" />
+
+    <TextView
+        android:id="@+id/time_box_11"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_10"
+        app:layout_constraintStart_toEndOf="@id/time_box_10"
+        app:layout_constraintTop_toTopOf="@id/time_box_10" />
+
+    <TextView
+        android:id="@+id/time_box_12"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_11"
+        app:layout_constraintStart_toEndOf="@id/time_box_11"
+        app:layout_constraintTop_toTopOf="@id/time_box_11" />
+
+    <TextView
+        android:id="@+id/time_box_13"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_12"
+        app:layout_constraintStart_toEndOf="@id/time_box_12"
+        app:layout_constraintTop_toTopOf="@id/time_box_12" />
+
+    <TextView
+        android:id="@+id/time_box_14"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_13"
+        app:layout_constraintStart_toEndOf="@id/time_box_13"
+        app:layout_constraintTop_toTopOf="@id/time_box_13" />
+
+    <TextView
+        android:id="@+id/time_box_15"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_14"
+        app:layout_constraintStart_toEndOf="@id/time_box_14"
+        app:layout_constraintTop_toTopOf="@id/time_box_14" />
+
+    <TextView
+        android:id="@+id/time_box_16"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_15"
+        app:layout_constraintStart_toEndOf="@id/time_box_15"
+        app:layout_constraintTop_toTopOf="@id/time_box_15" />
+
+    <TextView
+        android:id="@+id/time_box_17"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_16"
+        app:layout_constraintStart_toEndOf="@id/time_box_16"
+        app:layout_constraintTop_toTopOf="@id/time_box_16" />
+
+    <TextView
+        android:id="@+id/time_box_18"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_17"
+        app:layout_constraintStart_toEndOf="@id/time_box_17"
+        app:layout_constraintTop_toTopOf="@id/time_box_17" />
+
+    <TextView
+        android:id="@+id/time_box_19"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_18"
+        app:layout_constraintStart_toEndOf="@id/time_box_18"
+        app:layout_constraintTop_toTopOf="@id/time_box_18" />
+
+    <TextView
+        android:id="@+id/time_box_20"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_19"
+        app:layout_constraintStart_toEndOf="@id/time_box_19"
+        app:layout_constraintTop_toTopOf="@id/time_box_19" />
+
+    <TextView
+        android:id="@+id/time_box_21"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_20"
+        app:layout_constraintStart_toEndOf="@id/time_box_20"
+        app:layout_constraintTop_toTopOf="@id/time_box_20" />
+
+    <TextView
+        android:id="@+id/time_box_22"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_21"
+        app:layout_constraintStart_toEndOf="@id/time_box_21"
+        app:layout_constraintTop_toTopOf="@id/time_box_21" />
+
+    <TextView
+        android:id="@+id/time_box_23"
+        android:layout_width="21dp"
+        android:layout_height="26dp"
+        android:background="@drawable/background_time_box_unselected"
+        app:layout_constraintBottom_toBottomOf="@id/time_box_22"
+        app:layout_constraintStart_toEndOf="@id/time_box_22"
+        app:layout_constraintTop_toTopOf="@id/time_box_22" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

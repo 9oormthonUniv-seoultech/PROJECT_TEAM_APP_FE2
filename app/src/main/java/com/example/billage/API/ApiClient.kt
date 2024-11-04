@@ -30,7 +30,7 @@ class ApiClient(val context: Context){
         .build()
 
     val retrofit = Retrofit.Builder()
-        // .baseUrl(BuildConfig.server_url)
+//        .baseUrl(BuildConfig.server_url)
         // SSL 우회
         .client(getUnsafeOkHttpClient().build())
         .addConverterFactory(GsonConverterFactory.create())
