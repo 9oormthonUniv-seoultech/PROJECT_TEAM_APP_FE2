@@ -12,10 +12,10 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
-import com.example.billage.Modal.ModalBottomSheet
-import com.example.billage.Modal.ModalBottomSheet.Companion.TAG
-import com.example.billage.Modal.ModalBottomSheetAdapter
-import com.example.billage.Modal.ModalBottomSheetItem
+import com.example.billage.Login.Modal.ModalBottomSheet
+import com.example.billage.Login.Modal.ModalBottomSheet.Companion.TAG
+import com.example.billage.Login.Modal.ModalBottomSheetAdapter
+import com.example.billage.Login.Modal.ModalBottomSheetItem
 import com.example.billage.R
 import com.example.billage.databinding.FragmentLoginStudentInformBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog

@@ -14,7 +14,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.example.billage.Modal.ModalBottomSheet.Companion.TAG
+import com.example.billage.Login.Modal.ModalBottomSheet.Companion.TAG
 import com.example.billage.R
 import com.example.billage.databinding.FragmentLoginEmailBinding
 import org.w3c.dom.Text
@@ -49,6 +49,11 @@ class LoginEmailFragment : Fragment() {
         onDelKeyListener()
         binding.buttonAccept.setOnClickListener{
             onClickButtonListener()
+        }
+
+        // 다음으로 버튼 누르면 넘어가기
+        binding.buttonEmailNext.setOnClickListener {
+            (activity as LoginActivity).changeFragment(5)
         }
         return binding.root
     }

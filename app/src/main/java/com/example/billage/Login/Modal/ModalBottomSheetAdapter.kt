@@ -1,4 +1,4 @@
-package com.example.billage.Modal
+package com.example.billage.Login.Modal
 
 import android.view.LayoutInflater
 import android.view.View
@@ -14,12 +14,12 @@ class ModalBottomSheetAdapter(private val listener: OnItemClickListener) : Recyc
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ModalBottomSheetAdapter.Holder {
+    ): Holder {
         val view = Holder(LayoutListViewBottomSheetItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
         return view
     }
 
-    override fun onBindViewHolder(holder: ModalBottomSheetAdapter.Holder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) {
         val item = itemList[position]
         holder.bind(item)
     }

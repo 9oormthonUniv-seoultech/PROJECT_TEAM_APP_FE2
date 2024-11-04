@@ -1,4 +1,4 @@
-package com.example.billage.Modal
+package com.example.billage.Login.Modal
 
 import android.content.Context
 import android.os.Bundle
