@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_classroom_status"
+        android:icon="@drawable/ic_menu_classroom_status"
+        android:title="강의실 현황" />
+    <item
+        android:id="@+id/menu_reservation_management"
+        android:icon="@drawable/ic_menu_reservation_management"
+        android:title="예약 관리" />
+    <item
+        android:id="@+id/menu_classroom_reservation"
+        android:icon="@drawable/ic_menu_classroom_reservation"
+        android:title="강의실 예약" />
+</menu>

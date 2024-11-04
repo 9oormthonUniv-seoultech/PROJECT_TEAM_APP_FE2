@@ -3,7 +3,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
+    <color name="transparent">#00000000</color>
     <color name="wh">#FBFBFB</color>
     <color name="G1">#0E0D0E</color>
     <color name="G2">#3D3C3E</color>
