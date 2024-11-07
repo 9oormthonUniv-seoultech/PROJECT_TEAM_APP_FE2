@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/background_dialog"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView_title"
+        style="@style/body_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="시작"
+        android:textColor="@color/G1"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        style="@style/body_semi_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2024.09.24"
+        android:textColor="@color/color1"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintTop_toTopOf="@+id/textView_title" />
+
+    <com.archit.calendardaterangepicker.customviews.DateRangeCalendarView
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:disable_date_color="@color/G3"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toBottomOf="@+id/textView_title"
+        custom:range_color="@color/color1"
+        custom:selected_date_color="@color/wh"
+        custom:selected_date_circle_color="@color/color1"
+        custom:title_color="@color/G1"
+        custom:week_color="@color/G3"
+        custom:date_selection_mode="single"
+        custom:text_size_date="16sp"
+        custom:text_size_week="12sp"
+        custom:text_size_title="16sp">
+    </com.archit.calendardaterangepicker.customviews.DateRangeCalendarView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

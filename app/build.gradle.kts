@@ -75,6 +75,9 @@ dependencies {
     // Material 디자인
     implementation("com.google.android.material:material:1.12.0")
 
+    // 캘린더
+    implementation("io.github.architshah248.calendar:awesome-calendar:2.0.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
