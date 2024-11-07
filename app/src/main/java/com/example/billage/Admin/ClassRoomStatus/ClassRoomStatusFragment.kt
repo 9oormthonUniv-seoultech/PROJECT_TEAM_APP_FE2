@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.billage.Admin.ClassRoomStatus.Adapter.DateAdapter
+import com.example.billage.AdminActivity
+import com.example.billage.MainActivity
+import com.example.billage.MainUtil.setStatusBarTransparent
 import com.example.billage.R
 import com.example.billage.databinding.FragmentClassRoomStatusBinding
 import java.text.SimpleDateFormat
@@ -20,6 +23,7 @@ import java.util.Locale
 class ClassRoomStatusFragment : Fragment() {
 
     lateinit var binding: FragmentClassRoomStatusBinding
+    lateinit var adminActivity: AdminActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +31,9 @@ class ClassRoomStatusFragment : Fragment() {
     ): View? {
 
         binding = FragmentClassRoomStatusBinding.inflate(layoutInflater)
+        adminActivity = activity as AdminActivity
+
+        adminActivity.setStatusBarTransparent()
 
         binding.run {
             // 오늘 날짜 기준으로 앞으로 30일간의 날짜를 생성
@@ -38,6 +45,14 @@ class ClassRoomStatusFragment : Fragment() {
                 adapter = dateAdapter
 
                 layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
+            }
+
+            buttonFilter.setOnClickListener {
+                val nextFragment = ClassRoomSatatusFilterFragment()
+
+                val transaction = adminActivity.supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.fragmentContainerView_admin, nextFragment)
+                transaction.commit()
             }
         }
 
