@@ -37,6 +37,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView_logo"
         app:srcCompat="@drawable/ic_setting" />
 </androidx.constraintlayout.widget.ConstraintLayout>
